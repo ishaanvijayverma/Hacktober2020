@@ -3,12 +3,12 @@
  
 void main()
 {
-    int s, a, b, c, area;
+    float s, a, b, c, area;
  
     printf("Enter the values of a, b and c \n");
     scanf("%d %d %d", &a, &b, &c);
-    /* compute s */
+    /* compute s ie. semi perimeter*/
     s = (a + b + c) / 2;
-    area = sqrt(s * (s - a) * (s - b) * (s - c));
+    area = sqrt(s*(s-a)*(s-b)*(s-c)); //Heron's Formul
     printf("Area of a triangle = %d \n", area);
 }
