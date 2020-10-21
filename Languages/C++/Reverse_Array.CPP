@@ -1,37 +1,45 @@
-//Program to Reverse an Array
-//Contributed by Navdeep Singh
-
-
-#include<iostream.h>
-#include<conio.h>
-
-void Reverse_array(int b[],int N)
+#include <iostream>
+using namespace std;
+void Reverse_Array(int array[],int size);
+int main()
 {
-  int temp,i,j;
-  for(i=0,j=N-1;i<N/2;i++,j--)
+        int i,a[50],size;
+    cout<<"Enter array size( Max:50 ) :: ";
+    cin>>size;
+        cout<<"\nEnter array elements :: \n";
+ 
+        for(i=0; i<size; i++)
+        {
+            cout<<"\nEnter arr["<<i<<"] Element :: ";
+                cin>>a[i];
+        }
+ 
+  cout<<"\nStored Data in Array :: \n\n";
+ 
+  for(i=0;i<size;i++)
   {
-    temp=b[i];
-    b[i]=b[j];
-    b[j]=temp;
+  cout<<" "<<a[i]<<" ";
   }
-   cout<<"\nReverse array is : "<<endl;
-   for(i=0;i<N;i++)
-   {
-     cout<<b[i]<<" ";
-   }
+        // Calling Reverse Array Values Function
+        Reverse_Array(a,size);
+        cout << "\n\nReversed Array Values are :: " << endl;
+    for(i=0;i<size;i++)
+    {
+      cout<<" "<<a[i]<<" ";
+    }
+ 
+    cout<<"\n";
+ 
+        return 0;
 }
-void main()
+void Reverse_Array(int array[],int size)
 {
- clrscr();
- int a[40],n,i;
- cout<<"enter the size of array elemnts :";
- cin>>n;
- for(i=0;i<n;i++)
- {
-   cout<<"enter element "<<i+1<<":";
-   cin>>a[i];
- }
- Reverse_array(a,n);
- getch();
+        int temp;
+        size--;
+        for (int i=0;size>=i;size--,i++)
+    {
+                temp=array[i];
+                array[i]=array[size];
+                array[size]=temp;
+        }
 }
-
